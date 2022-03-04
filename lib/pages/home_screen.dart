@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pokemonapp/models/pokemon.dart';
 
 import 'package:pokemonapp/pages/ability_screen.dart';
@@ -27,6 +28,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         backgroundColor: Colors.white10,
         appBar: AppBar(
+            leading: IconButton(
+              icon: Icon(Icons.close),
+              onPressed: () {
+                SystemNavigator.pop();
+              },
+            ),
             title: const Text("Pokémon App",
                 style: TextStyle(fontSize: 20, color: (Colors.white)))),
         body: _listPokemon == null
